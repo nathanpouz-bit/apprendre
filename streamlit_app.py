@@ -93,9 +93,9 @@ def normalize(col):
 mapping = {
     "chiffredaffaires": "Chiffre_Affaires",
     "ca": "Chiffre_Affaires",
-    "sales": "Chiffre_Affaires",
+    "Sales": "Chiffre_Affaires",
     "revenue": "Chiffre_Affaires",
-    "Gross Sales": "Chiffre_Affaires",
+
 
     "profit": "Profit",
     "benefice": "Profit",
