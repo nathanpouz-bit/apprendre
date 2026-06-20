@@ -26,7 +26,7 @@ mapping = {
     "country": "Pays",
 
     "produit": "Produit",
-     "Segment": "Produit",
+    "Segment": "Produit",
     "product": "Produit"
 }
 
