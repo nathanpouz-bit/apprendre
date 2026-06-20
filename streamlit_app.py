@@ -9,6 +9,7 @@ mapping = {
     "ca": "Chiffre_Affaires",
     "sales": "Chiffre_Affaires",
     "revenue": "Chiffre_Affaires",
+    "Gross Sales": "Chiffre_Affaires",
 
     "profit": "Profit",
     "benefice": "Profit",
@@ -25,6 +26,7 @@ mapping = {
     "country": "Pays",
 
     "produit": "Produit",
+     "Segment": "Produit",
     "product": "Produit"
 }
 
