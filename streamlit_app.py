@@ -1,44 +1,3 @@
-import re
-
-def normalize(col):
-    return re.sub(r'[^a-zA-Z0-9]', '', col.lower())
-
-# dictionnaire "intelligent"
-mapping = {
-    "chiffredaffaires": "Chiffre_Affaires",
-    "ca": "Chiffre_Affaires",
-    "sales": "Chiffre_Affaires",
-    "revenue": "Chiffre_Affaires",
-    "Gross Sales": "Chiffre_Affaires",
-
-    "profit": "Profit",
-    "benefice": "Profit",
-    "margin": "Profit",
-
-    "cost": "Cout",
-    "costs": "Cout",
-    "expenses": "Cout",
-
-    "date": "Date",
-    "jour": "Date",
-
-    "pays": "Pays",
-    "country": "Pays",
-
-    "produit": "Produit",
-    "Segment": "Produit",
-    "product": "Produit"
-}
-
-new_cols = {}
-
-for col in df.columns:
-    key = normalize(col)
-    if key in mapping:
-        new_cols[col] = mapping[key]
-
-df = df.rename(columns=new_cols)
-
 
 import streamlit as st
 import pandas as pd
@@ -124,3 +83,46 @@ if uploaded_file is not None:
     # ----------------------------
     st.subheader("📋 Données")
     st.dataframe(df, use_container_width=True)
+
+import re
+
+def normalize(col):
+    return re.sub(r'[^a-zA-Z0-9]', '', col.lower())
+
+# dictionnaire "intelligent"
+mapping = {
+    "chiffredaffaires": "Chiffre_Affaires",
+    "ca": "Chiffre_Affaires",
+    "sales": "Chiffre_Affaires",
+    "revenue": "Chiffre_Affaires",
+    "Gross Sales": "Chiffre_Affaires",
+
+    "profit": "Profit",
+    "benefice": "Profit",
+    "margin": "Profit",
+
+    "cost": "Cout",
+    "costs": "Cout",
+    "expenses": "Cout",
+
+    "date": "Date",
+    "jour": "Date",
+
+    "pays": "Pays",
+    "country": "Pays",
+
+    "produit": "Produit",
+    "Segment": "Produit",
+    "product": "Produit"
+}
+
+new_cols = {}
+
+for col in df.columns:
+    key = normalize(col)
+    if key in mapping:
+        new_cols[col] = mapping[key]
+
+df = df.rename(columns=new_cols)
+
+
